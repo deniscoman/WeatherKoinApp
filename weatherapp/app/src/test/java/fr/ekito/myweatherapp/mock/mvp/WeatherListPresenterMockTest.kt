@@ -3,9 +3,7 @@ package fr.ekito.myweatherapp.mock.mvp
 import fr.ekito.myweatherapp.domain.repository.DailyForecastRepository
 import fr.ekito.myweatherapp.mock.MockedData.mockList
 import fr.ekito.myweatherapp.util.MockitoHelper
-import fr.ekito.myweatherapp.util.TestSchedulerProvider
 import fr.ekito.myweatherapp.view.weather.WeatherListContract
-import fr.ekito.myweatherapp.view.weather.WeatherListPresenter
 import fr.ekito.myweatherapp.view.weather.list.WeatherItem
 import io.reactivex.Single
 import org.junit.Before
@@ -32,7 +30,6 @@ class WeatherListPresenterMockTest {
     fun before() {
         MockitoAnnotations.initMocks(this)
 
-        presenter = WeatherListPresenter(repository, TestSchedulerProvider())
         presenter.view = view
     }
 

@@ -23,13 +23,6 @@ class WeatherHeaderPresenter(
     }
 
     override fun getWeatherOfTheDay() {
-        launch {
-            dailyForecastRepository.getWeather()
-                .map { it.first() }
-                .with(schedulerProvider)
-                .subscribe(
-                    { weather -> view?.showWeather(weather.location, weather) },
-                    { error -> view?.showError(error) })
-        }
+
     }
 }
